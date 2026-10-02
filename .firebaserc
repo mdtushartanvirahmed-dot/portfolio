@@ -1,0 +1,23 @@
+{
+  "projects": {
+    "default": "cvil-fc",
+    "portfolio": "tanvir-portfolio-7ce60"
+  },
+  "targets": {
+    "cvil-fc": {
+      "hosting": {
+        "portfolio": [
+          "tanvir-portfolio-f6eb5"
+        ]
+      }
+    },
+    "tanvir-portfolio-7ce60": {
+      "hosting": {
+        "portfolio": [
+          "tanvir-portfolio-7ce60"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
