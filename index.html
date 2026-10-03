@@ -1,162 +1,1024 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Tanvir Ahmed | Web Developer</title>
-<meta name="description" content="Tanvir Ahmed — Web Developer portfolio, skills and projects.">
+
+<meta name="description"
+content="Tanvir Ahmed — Web Developer portfolio, skills and projects.">
+
 <style>
-:root{--bg:#070b14;--card:#101827;--card2:#0d1421;--text:#f7fbff;--muted:#9aa8ba;--accent:#00e5ff;--line:#1d2a3d}
-*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
-body{font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
-body:before{content:"";position:fixed;width:430px;height:430px;right:-160px;top:100px;background:rgba(0,229,255,.09);filter:blur(110px);border-radius:50%;z-index:-1}
-nav{position:fixed;top:0;width:100%;height:72px;padding:0 8%;display:flex;align-items:center;justify-content:space-between;background:rgba(7,11,20,.78);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.05);z-index:100}
-.logo{font-size:25px;font-weight:900}.logo span,.accent{color:var(--accent)}
-nav ul{display:flex;gap:26px;list-style:none}
-nav a{color:#dce6f2;text-decoration:none;font-size:14px;font-weight:700}nav a:hover{color:var(--accent)}
-.menu{display:none;background:none;border:0;color:white;font-size:28px;cursor:pointer}
-section{padding:110px 8%}
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:space-between;gap:60px;max-width:1200px;margin:auto}
-.hero-copy{max-width:720px}.eyebrow{color:var(--accent);font-weight:800;letter-spacing:2px;text-transform:uppercase;font-size:13px}
-h1{font-size:clamp(52px,8vw,92px);line-height:.98;margin:18px 0}h1 span{color:var(--accent)}
-.hero h2{font-size:25px;color:#dbe7f5;margin-bottom:16px}.hero p{color:var(--muted);font-size:18px;max-width:650px;margin-bottom:30px}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 22px;border-radius:12px;background:var(--accent);color:#001014;text-decoration:none;font-weight:850;margin:0 8px 8px 0;transition:.25s;border:1px solid var(--accent);cursor:pointer}
-.btn:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(0,229,255,.18)}
-.outline{background:transparent;color:var(--accent)}
-.hero-card{width:310px;height:310px;border:1px solid var(--line);border-radius:34px;background:linear-gradient(145deg,#121d2e,#0b111d);display:flex;align-items:center;justify-content:center;box-shadow:0 30px 80px rgba(0,0,0,.35);animation:float 4s ease-in-out infinite}
-.avatar{width:175px;height:175px;border-radius:50%;border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;font-size:55px;font-weight:900;color:var(--accent);box-shadow:0 0 50px rgba(0,229,255,.18)}
-@keyframes float{50%{transform:translateY(-10px)}}
-.title{text-align:center;margin-bottom:48px}.title small{color:var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:2px}.title h2{font-size:42px;margin-top:8px}.title p{color:var(--muted);max-width:620px;margin:8px auto 0}
-.about-box{max-width:900px;margin:auto;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:35px;text-align:center;color:var(--muted);font-size:17px}
-.skills{max-width:950px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.skill{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:23px;text-align:center;font-weight:750;transition:.25s}.skill:hover{transform:translateY(-5px);border-color:var(--accent)}
-.projects{max-width:1000px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
-.project{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:28px;transition:.25s}.project:hover{transform:translateY(-7px);border-color:var(--accent)}
-.project-tag{color:var(--accent);font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}.project h3{font-size:26px;margin:12px 0 8px}.project p{color:var(--muted);margin-bottom:22px}
-.project .btn{font-size:14px;padding:10px 16px}
-.profile-grid{max-width:1000px;margin:auto;display:grid;grid-template-columns:1fr 1.5fr;gap:24px}
-.profile-card,.info-card,.contact-box{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:30px}
-.profile-card{text-align:center}.mini-avatar{width:120px;height:120px;border-radius:50%;margin:0 auto 18px;border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:38px;font-weight:900}
-.profile-card h3{font-size:25px}.profile-card p,.info-card p{color:var(--muted)}
-.info-card h3{font-size:24px;margin-bottom:14px}.info-list{list-style:none;color:#d6e0eb;margin:18px 0}.info-list li{padding:7px 0}.info-list span{color:var(--accent);font-weight:700}
-.actions{margin-top:20px}
-.contact-box{max-width:850px;margin:auto}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{margin-bottom:16px}
-label{display:block;color:#dce6f2;font-size:14px;font-weight:700;margin-bottom:7px}
-input,textarea{width:100%;border:1px solid var(--line);background:var(--card2);color:white;border-radius:12px;padding:13px;font:inherit;outline:none}
-input:focus,textarea:focus{border-color:var(--accent)}textarea{min-height:140px;resize:vertical}
-.notice{color:var(--muted);font-size:13px;margin-top:10px}
-footer{text-align:center;padding:28px;border-top:1px solid var(--line);color:#748196;font-size:14px}
-.reveal{opacity:0;transform:translateY(18px);transition:.7s}.reveal.show{opacity:1;transform:none}
-@media(max-width:850px){nav{padding:0 5%}.menu{display:block}nav ul{position:absolute;top:72px;left:0;width:100%;display:none;flex-direction:column;gap:0;background:rgba(7,11,20,.96);border-bottom:1px solid var(--line)}nav ul.open{display:flex}nav li a{display:block;padding:15px 7%}.hero{padding-top:95px;flex-direction:column;text-align:center;justify-content:center}.hero p{margin-left:auto;margin-right:auto}.hero-card{width:235px;height:235px}.avatar{width:130px;height:130px;font-size:42px}.profile-grid{grid-template-columns:1fr}.skills{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:520px){section{padding:90px 5%}.skills{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}h1{font-size:56px}.hero h2{font-size:21px}}
+:root{
+  --bg:#070b14;
+  --card:#101827;
+  --card2:#0d1421;
+  --text:#f7fbff;
+  --muted:#9aa8ba;
+  --accent:#00e5ff;
+  --line:#1d2a3d
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth
+}
+
+body{
+  font-family:Inter,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  overflow-x:hidden
+}
+
+body:before{
+  content:"";
+  position:fixed;
+  width:430px;
+  height:430px;
+  right:-160px;
+  top:100px;
+  background:rgba(0,229,255,.09);
+  filter:blur(110px);
+  border-radius:50%;
+  z-index:-1
+}
+
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  height:72px;
+  padding:0 8%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:rgba(7,11,20,.78);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,255,255,.05);
+  z-index:100
+}
+
+.logo{
+  font-size:25px;
+  font-weight:900
+}
+
+.logo span,
+.accent{
+  color:var(--accent)
+}
+
+nav ul{
+  display:flex;
+  gap:26px;
+  list-style:none
+}
+
+nav a{
+  color:#dce6f2;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:700
+}
+
+nav a:hover{
+  color:var(--accent)
+}
+
+.menu{
+  display:none;
+  background:none;
+  border:0;
+  color:white;
+  font-size:28px;
+  cursor:pointer
+}
+
+section{
+  padding:110px 8%
+}
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:60px;
+  max-width:1200px;
+  margin:auto
+}
+
+.hero-copy{
+  max-width:720px
+}
+
+.eyebrow{
+  color:var(--accent);
+  font-weight:800;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-size:13px
+}
+
+h1{
+  font-size:clamp(52px,8vw,92px);
+  line-height:.98;
+  margin:18px 0
+}
+
+h1 span{
+  color:var(--accent)
+}
+
+.hero h2{
+  font-size:25px;
+  color:#dbe7f5;
+  margin-bottom:16px
+}
+
+.hero p{
+  color:var(--muted);
+  font-size:18px;
+  max-width:650px;
+  margin-bottom:30px
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:13px 22px;
+  border-radius:12px;
+  background:var(--accent);
+  color:#001014;
+  text-decoration:none;
+  font-weight:850;
+  margin:0 8px 8px 0;
+  transition:.25s;
+  border:1px solid var(--accent);
+  cursor:pointer
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 35px rgba(0,229,255,.18)
+}
+
+.outline{
+  background:transparent;
+  color:var(--accent)
+}
+
+.hero-card{
+  width:310px;
+  height:310px;
+  border:1px solid var(--line);
+  border-radius:34px;
+  background:linear-gradient(145deg,#121d2e,#0b111d);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 30px 80px rgba(0,0,0,.35);
+  animation:float 4s ease-in-out infinite
+}
+
+.avatar{
+  width:175px;
+  height:175px;
+  border-radius:50%;
+  border:2px solid var(--accent);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:55px;
+  font-weight:900;
+  color:var(--accent);
+  box-shadow:0 0 50px rgba(0,229,255,.18)
+}
+
+@keyframes float{
+  50%{
+    transform:translateY(-10px)
+  }
+}
+
+.title{
+  text-align:center;
+  margin-bottom:48px
+}
+
+.title small{
+  color:var(--accent);
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:2px
+}
+
+.title h2{
+  font-size:42px;
+  margin-top:8px
+}
+
+.title p{
+  color:var(--muted);
+  max-width:620px;
+  margin:8px auto 0
+}
+
+.about-box{
+  max-width:900px;
+  margin:auto;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:35px;
+  text-align:center;
+  color:var(--muted);
+  font-size:17px
+}
+
+.skills{
+  max-width:950px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px
+}
+
+.skill{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:23px;
+  text-align:center;
+  font-weight:750;
+  transition:.25s
+}
+
+.skill:hover{
+  transform:translateY(-5px);
+  border-color:var(--accent)
+}
+
+.projects{
+  max-width:1000px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:22px
+}
+
+.project{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:28px;
+  transition:.25s
+}
+
+.project:hover{
+  transform:translateY(-7px);
+  border-color:var(--accent)
+}
+
+.project-tag{
+  color:var(--accent);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:1.5px;
+  text-transform:uppercase
+}
+
+.project h3{
+  font-size:26px;
+  margin:12px 0 8px
+}
+
+.project p{
+  color:var(--muted);
+  margin-bottom:22px
+}
+
+.project .btn{
+  font-size:14px;
+  padding:10px 16px
+}
+
+.profile-grid{
+  max-width:1000px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1.5fr;
+  gap:24px
+}
+
+.profile-card,
+.info-card,
+.contact-box{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:30px
+}
+
+.profile-card{
+  text-align:center
+}
+
+.mini-avatar{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  margin:0 auto 18px;
+  border:2px solid var(--accent);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--accent);
+  font-size:38px;
+  font-weight:900
+}
+
+.profile-card h3{
+  font-size:25px
+}
+
+.profile-card p,
+.info-card p{
+  color:var(--muted)
+}
+
+.info-card h3{
+  font-size:24px;
+  margin-bottom:14px
+}
+
+.info-list{
+  list-style:none;
+  color:#d6e0eb;
+  margin:18px 0
+}
+
+.info-list li{
+  padding:7px 0
+}
+
+.info-list span{
+  color:var(--accent);
+  font-weight:700
+}
+
+.actions{
+  margin-top:20px
+}
+
+.contact-box{
+  max-width:850px;
+  margin:auto
+}
+
+.form-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px
+}
+
+.field{
+  margin-bottom:16px
+}
+
+label{
+  display:block;
+  color:#dce6f2;
+  font-size:14px;
+  font-weight:700;
+  margin-bottom:7px
+}
+
+input,
+textarea{
+  width:100%;
+  border:1px solid var(--line);
+  background:var(--card2);
+  color:white;
+  border-radius:12px;
+  padding:13px;
+  font:inherit;
+  outline:none
+}
+
+input:focus,
+textarea:focus{
+  border-color:var(--accent)
+}
+
+textarea{
+  min-height:140px;
+  resize:vertical
+}
+
+.notice{
+  color:var(--muted);
+  font-size:13px;
+  margin-top:10px
+}
+
+footer{
+  text-align:center;
+  padding:28px;
+  border-top:1px solid var(--line);
+  color:#748196;
+  font-size:14px
+}
+
+.reveal{
+  opacity:0;
+  transform:translateY(18px);
+  transition:.7s
+}
+
+.reveal.show{
+  opacity:1;
+  transform:none
+}
+
+@media(max-width:850px){
+
+  nav{
+    padding:0 5%
+  }
+
+  .menu{
+    display:block
+  }
+
+  nav ul{
+    position:absolute;
+    top:72px;
+    left:0;
+    width:100%;
+    display:none;
+    flex-direction:column;
+    gap:0;
+    background:rgba(7,11,20,.96);
+    border-bottom:1px solid var(--line)
+  }
+
+  nav ul.open{
+    display:flex
+  }
+
+  nav li a{
+    display:block;
+    padding:15px 7%
+  }
+
+  .hero{
+    padding-top:95px;
+    flex-direction:column;
+    text-align:center;
+    justify-content:center
+  }
+
+  .hero p{
+    margin-left:auto;
+    margin-right:auto
+  }
+
+  .hero-card{
+    width:235px;
+    height:235px
+  }
+
+  .avatar{
+    width:130px;
+    height:130px;
+    font-size:42px
+  }
+
+  .profile-grid{
+    grid-template-columns:1fr
+  }
+
+  .skills{
+    grid-template-columns:repeat(2,1fr)
+  }
+}
+
+@media(max-width:520px){
+
+  section{
+    padding:90px 5%
+  }
+
+  .skills{
+    grid-template-columns:1fr
+  }
+
+  .form-row{
+    grid-template-columns:1fr
+  }
+
+  h1{
+    font-size:56px
+  }
+
+  .hero h2{
+    font-size:21px
+  }
+}
 </style>
 </head>
+
 <body>
 
 <nav>
-  <div class="logo">Tanvir<span>.</span></div>
-  <button class="menu" id="menu" aria-label="Open menu">☰</button>
+
+  <div class="logo">
+    Tanvir<span>.</span>
+  </div>
+
+  <button class="menu" id="menu" aria-label="Open menu">
+    ☰
+  </button>
+
   <ul id="navLinks">
-    <li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li>
+
+    <li>
+      <a href="#home">Home</a>
+    </li>
+
+    <li>
+      <a href="#about">About</a>
+    </li>
+
+    <li>
+      <a href="#skills">Skills</a>
+    </li>
+
+    <li>
+      <a href="#projects">Projects</a>
+    </li>
+
+    <li>
+      <a href="#contact">Contact</a>
+    </li>
+
   </ul>
+
 </nav>
 
+
 <section id="home">
+
   <div class="hero reveal">
+
     <div class="hero-copy">
-      <div class="eyebrow">Available for web projects</div>
-      <h1>Tanvir <span>Ahmed</span></h1>
-      <h2>Web Developer</h2>
-      <p>I build modern, responsive and user-friendly websites with a clean interface and a strong focus on user experience.</p>
-      <a class="btn" href="#projects">View Projects</a>
-      <a class="btn outline" href="#contact">Let's Talk</a>
+
+      <div class="eyebrow">
+        Available for web projects
+      </div>
+
+      <h1>
+        Tanvir <span>Ahmed</span>
+      </h1>
+
+      <h2>
+        Web Developer
+      </h2>
+
+      <p>
+        I build modern, responsive and user-friendly websites
+        with a clean interface and a strong focus on user experience.
+      </p>
+
+      <a class="btn" href="#projects">
+        View Projects
+      </a>
+
+      <a class="btn outline" href="#contact">
+        Let's Talk
+      </a>
+
     </div>
-    <div class="hero-card"><div class="avatar">TA</div></div>
+
+    <div class="hero-card">
+
+      <div class="avatar">
+        TA
+      </div>
+
+    </div>
+
   </div>
+
 </section>
+
 
 <section id="about">
-  <div class="title reveal"><small>About me</small><h2>Building with purpose</h2><p>A growing developer focused on learning through real projects.</p></div>
-  <div class="profile-grid reveal">
-    <div class="profile-card">
-      <div class="mini-avatar">TA</div><h3>Tanvir Ahmed</h3><p>Web Developer</p>
-      <div class="actions">
-        <a class="btn outline" href="#contact">Contact</a>
-        <a class="btn" href="cv.pdf" download>Download CV</a>
-      </div>
-      <p class="notice">Replace <b>cv.pdf</b> with your real CV file when you have one.</p>
-    </div>
-    <div class="info-card">
-      <h3>About Me</h3>
-      <p>I'm Tanvir Ahmed, a Web Developer who enjoys creating clean, responsive and modern websites. I'm continuously improving my skills and building real-world projects to become a professional developer.</p>
-      <ul class="info-list">
-        <li><span>Focus:</span> Frontend & Responsive Websites</li>
-        <li><span>Learning:</span> JavaScript, Firebase & Modern Web Development</li>
-        <li><span>Goal:</span> Build useful websites for real clients</li>
-      </ul>
-      <a class="btn" href="https://cvil-fc.web.app/" target="_blank" rel="noopener noreferrer">
-    Live Demo ↗
-</a>
-    </div>
+
+  <div class="title reveal">
+
+    <small>
+      About me
+    </small>
+
+    <h2>
+      Building with purpose
+    </h2>
+
+    <p>
+      A growing developer focused on learning through real projects.
+    </p>
+
   </div>
+
+
+  <div class="profile-grid reveal">
+
+    <div class="profile-card">
+
+      <div class="mini-avatar">
+        TA
+      </div>
+
+      <h3>
+        Tanvir Ahmed
+      </h3>
+
+      <p>
+        Web Developer
+      </p>
+
+      <div class="actions">
+
+        <a class="btn outline" href="#contact">
+          Contact
+        </a>
+
+        <a class="btn" href="cv.pdf" download>
+          Download CV
+        </a>
+
+      </div>
+
+      <p class="notice">
+        Replace <b>cv.pdf</b> with your real CV file when you have one.
+      </p>
+
+    </div>
+
+
+    <div class="info-card">
+
+      <h3>
+        About Me
+      </h3>
+
+      <p>
+        I'm Tanvir Ahmed, a Web Developer who enjoys creating
+        clean, responsive and modern websites. I'm continuously
+        improving my skills and building real-world projects
+        to become a professional developer.
+      </p>
+
+      <ul class="info-list">
+
+        <li>
+          <span>Focus:</span>
+          Frontend & Responsive Websites
+        </li>
+
+        <li>
+          <span>Learning:</span>
+          JavaScript, Firebase & Modern Web Development
+        </li>
+
+        <li>
+          <span>Goal:</span>
+          Build useful websites for real clients
+        </li>
+
+      </ul>
+
+      <a
+        class="btn"
+        href="https://cvil-fc.web.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Live Demo ↗
+      </a>
+
+    </div>
+
+  </div>
+
 </section>
+
 
 <section id="skills">
-  <div class="title reveal"><small>What I use</small><h2>My Skills</h2></div>
-  <div class="skills reveal">
-    <div class="skill">HTML</div><div class="skill">CSS</div><div class="skill">JavaScript</div>
-    <div class="skill">Responsive Design</div><div class="skill">Firebase</div><div class="skill">Git & GitHub</div>
+
+  <div class="title reveal">
+
+    <small>
+      What I use
+    </small>
+
+    <h2>
+      My Skills
+    </h2>
+
   </div>
+
+
+  <div class="skills reveal">
+
+    <div class="skill">
+      HTML
+    </div>
+
+    <div class="skill">
+      CSS
+    </div>
+
+    <div class="skill">
+      JavaScript
+    </div>
+
+    <div class="skill">
+      Responsive Design
+    </div>
+
+    <div class="skill">
+      Firebase
+    </div>
+
+    <div class="skill">
+      Git & GitHub
+    </div>
+
+  </div>
+
 </section>
+
 
 <section id="projects">
-  <div class="title reveal"><small>Selected work</small><h2>My Projects</h2><p>More projects will be added as I build them.</p></div>
-  <div class="projects reveal">
-    <article class="project">
-      <div class="project-tag">Live Project</div><h3>CVIL-FC</h3>
-      <p>A web project deployed with Firebase Hosting. This is currently my first featured project.</p>
-      <a class="btn" href="https://cvil-fc.web.app" target="_blank" rel="noopener">Live Demo ↗</a>
-      <a class="btn outline" href="https://github.com/mdtushartanvirahmed-dot/civil-fc" target="_blank" rel="noopener">GitHub ↗</a>
-    </article>
+
+  <div class="title reveal">
+
+    <small>
+      Selected work
+    </small>
+
+    <h2>
+      My Projects
+    </h2>
+
+    <p>
+      More projects will be added as I build them.
+    </p>
+
   </div>
+
+
+  <div class="projects reveal">
+
+    <article class="project">
+
+      <div class="project-tag">
+        Live Project
+      </div>
+
+      <h3>
+        CVIL-FC
+      </h3>
+
+      <p>
+        A web project deployed with Firebase Hosting.
+        This is currently my first featured project.
+      </p>
+
+      <a
+        class="btn"
+        href="https://cvil-fc.web.app/"
+        target="_blank"
+        rel="noopener"
+      >
+        Live Demo ↗
+      </a>
+
+      <a
+        class="btn outline"
+        href="https://github.com/mdtushartanvirahmed-dot/civil-fc"
+        target="_blank"
+        rel="noopener"
+      >
+        GitHub ↗
+      </a>
+
+    </article>
+
+  </div>
+
 </section>
+
 
 <section id="contact">
-  <div class="title reveal"><small>Get in touch</small><h2>Let's work together</h2><p>Have a project idea? Send a message and I'll get back to you.</p></div>
-  <div class="contact-box reveal">
-    <form id="contactForm">
-      <div class="form-row">
-        <div class="field"><label for="name">Your Name</label><input id="name" required placeholder="Enter your name"></div>
-        <div class="field"><label for="email">Email</label><input id="email" type="email" required placeholder="you@example.com"></div>
-      </div>
-      <div class="field"><label for="message">Message</label><textarea id="message" required placeholder="Tell me about your project..."></textarea></div>
-      <button class="btn" type="submit">Send Message</button>
-      <div class="notice">The form currently opens your email app. Later we can connect it to Firebase or another backend.</div>
-    </form>
+
+  <div class="title reveal">
+
+    <small>
+      Get in touch
+    </small>
+
+    <h2>
+      Let's work together
+    </h2>
+
+    <p>
+      Have a project idea? Send a message and I'll get back to you.
+    </p>
+
   </div>
+
+
+  <div class="contact-box reveal">
+
+    <!-- CONTACT FORM -->
+
+    <form
+      action="https://formsubmit.co/mdtushartanvirahmed@gmail.com"
+      method="POST"
+    >
+
+      <!-- Email subject -->
+
+      <input
+        type="hidden"
+        name="_subject"
+        value="New Portfolio Project Inquiry"
+      >
+
+      <!-- Disable captcha -->
+
+      <input
+        type="hidden"
+        name="_captcha"
+        value="false"
+      >
+
+      <!-- Redirect after sending -->
+
+      <input
+        type="hidden"
+        name="_next"
+        value="https://tanvir-portfolio-7ce60.web.app/#contact"
+      >
+
+
+      <div class="form-row">
+
+        <div class="field">
+
+          <label for="name">
+            Your Name
+          </label>
+
+          <input
+            id="name"
+            name="name"
+            required
+            placeholder="Enter your name"
+          >
+
+        </div>
+
+
+        <div class="field">
+
+          <label for="email">
+            Email
+          </label>
+
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            placeholder="you@example.com"
+          >
+
+        </div>
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="message">
+          Message
+        </label>
+
+        <textarea
+          id="message"
+          name="message"
+          required
+          placeholder="Tell me about your project..."
+        ></textarea>
+
+      </div>
+
+
+      <button
+        class="btn"
+        type="submit"
+      >
+        Send Message
+      </button>
+
+
+      <div class="notice">
+        Your message will be sent directly to Tanvir Ahmed.
+      </div>
+
+    </form>
+
+  </div>
+
 </section>
 
-<footer>© 2026 Tanvir Ahmed · Web Developer</footer>
+
+<footer>
+
+  © 2026 Tanvir Ahmed · Web Developer
+
+</footer>
+
 
 <script>
-const menu=document.getElementById('menu'),links=document.getElementById('navLinks');
-menu.addEventListener('click',()=>links.classList.toggle('open'));
-document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
 
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')})
-},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const menu = document.getElementById('menu');
 
-document.getElementById('contactForm').addEventListener('submit',e=>{
-  e.preventDefault();
-  const name=document.getElementById('name').value.trim();
-  const email=document.getElementById('email').value.trim();
-  const message=document.getElementById('message').value.trim();
-  const subject=encodeURIComponent('Portfolio project inquiry from '+name);
-  const body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nMessage:\n'+message);
-  window.location.href='mailto:your-email@example.com?subject='+subject+'&body='+body;
+const links = document.getElementById('navLinks');
+
+
+menu.addEventListener('click', () => {
+
+  links.classList.toggle('open');
+
 });
+
+
+document
+  .querySelectorAll('#navLinks a')
+  .forEach(a => {
+
+    a.addEventListener('click', () => {
+
+      links.classList.remove('open');
+
+    });
+
+  });
+
+
+const observer = new IntersectionObserver(
+
+  entries => {
+
+    entries.forEach(e => {
+
+      if(e.isIntersecting){
+
+        e.target.classList.add('show');
+
+      }
+
+    });
+
+  },
+
+  {
+    threshold:.12
+  }
+
+);
+
+
+document
+  .querySelectorAll('.reveal')
+  .forEach(el => observer.observe(el));
+
 </script>
+
+
 </body>
 </html>
+```
